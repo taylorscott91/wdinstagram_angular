@@ -1,0 +1,17 @@
+<h2>Entries Index</h2>
+
+<form data-ng-submit="indexVm.create()">
+  <input placeholder="Author" data-ng-model="indexVm.newEntry.author" />
+  <input placeholder="Body" data-ng-model="indexVm.newEntry.body" />
+  <input placeholder="Photo Url" data-ng-model="indexVm.newEntry.photo_url" />
+  <button type="submit">Create</button>
+</form>
+
+
+<div data-ng-repeat="entry in indexVm.entries">
+  <a data-ui-sref="entryShow({id: $index})">
+    <img data-ng-src="{{entry.photo_url}}">
+    <p>{{entry.author}}</p>
+    <p>{{entry.body}}</p>
+  </a>
+</div>
